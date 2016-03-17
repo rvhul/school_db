@@ -23,7 +23,7 @@ class Student < ActiveRecord::Base
     FEMALE = 2
 
     def self.all
-    [MALE, FEMALE]  
+    [MALE, FEMALE]
     end
   end
 

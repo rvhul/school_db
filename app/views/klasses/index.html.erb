@@ -24,24 +24,22 @@
         </div>
       </div>
     </div>
-    <div id="students" class="col-md-4">
+    <div id="students" class="col-md-4 hidden">
       <div class="panel panel-danger">
         <div class="panel-heading">
-          <a type="button" class="pull-right" data-toggle="modal" data-target="#new_klass">
-            <%= fa_icon "plus-circle" %>
-          </a>
+          <%= link_to fa_icon("plus-circle"), "#",  class: "pull-right", remote: true %>
           <b>Students</b>
         </div>
         <div id="students-list" class="list-group">
         </div>
       </div>
     </div>
-    <div id="student" class="col-md-4">
+    <div id="student" class="col-md-4 hidden">
       <div class="panel panel-danger">
         <div class="panel-heading">
           <b>Student</b>
         </div>
-        <div class="list-group">
+        <div id="student-list" class="list-group">
         </div>
       </div>
     </div>
