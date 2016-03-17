@@ -1,1 +1,1 @@
-<%= link_to student.name, klass_section_student_path(@klass, @section, student), class: "list-group-item", remote: true %>
+<%= link_to(klass_section_student_path(@klass, @section, student), class: "list-group-item", remote: true) do content_tag(:span, "#{student.house.name}", class: "label label-#{student_house_color(student)} pull-right") +  content_tag(:b, student.roll_number) + " " + student.name end %>

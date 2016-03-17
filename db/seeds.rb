@@ -49,7 +49,7 @@ puts "  Done."
 
 puts "# Seeding Sections"
 Klass.all.each do |klass|
-  sections = %w[Alpha Kappa Omega Trinity]
+  sections = %w[A B C D]
   (0..(1 + rand(2))).each do |i|
     name = sections[i]
     seed_section(klass, name)
@@ -58,7 +58,7 @@ end
 puts "  Done."
 
 puts "# Seeding Houses"
-%w[Yellow Red Blue Green].each do |name|
+%w[Alpha Kappa Omega Trinity].each do |name|
   seed_house(name)
 end
 puts "  Done."
