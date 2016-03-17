@@ -1,0 +1,7 @@
+$('#edit_student').remove();
+$('body').append('<%= j render(partial: "students/edit") %>');
+$('#edit_student').modal('show');
+<% if @save_success %>
+  $('#students-list').append("<%= j render(@student) %>")
+  $('form#edit-student-form')[0].reset();
+<% end %>
