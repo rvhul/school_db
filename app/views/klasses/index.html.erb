@@ -4,7 +4,7 @@
     <div id="klasses" class="col-md-2">
       <div class="panel panel-danger">
         <div class="panel-heading">
-          <a type="button" class="pull-right" data-toggle="modal" data-target="#new_klass">
+          <a class="pull-right" data-toggle="modal" data-target="#new_klass" href="#">
             <%= fa_icon "plus-circle" %>
           </a>
           <b>Classes</b>
@@ -14,23 +14,25 @@
           </div>
       </div>
     </div>
-    <div id="sections" class="col-md-2">
+    <div id="sections" class="col-md-2 hidden">
       <div class="panel panel-danger">
         <div class="panel-heading">
+          <%= link_to fa_icon("plus-circle"), "#",  class: "pull-right", remote: true %>
           <b>Sections</b>
         </div>
-        <div class="list-group">
-          <%= render @klasses %>
+        <div id="sections-list" class="list-group">
         </div>
       </div>
     </div>
     <div id="students" class="col-md-4">
       <div class="panel panel-danger">
         <div class="panel-heading">
+          <a type="button" class="pull-right" data-toggle="modal" data-target="#new_klass">
+            <%= fa_icon "plus-circle" %>
+          </a>
           <b>Students</b>
         </div>
-        <div class="list-group">
-          <%= render @klasses %>
+        <div id="students-list" class="list-group">
         </div>
       </div>
     </div>
@@ -40,7 +42,6 @@
           <b>Student</b>
         </div>
         <div class="list-group">
-          <%= render @klasses %>
         </div>
       </div>
     </div>
@@ -48,20 +49,5 @@
 </div>
 
 
-<%# Klass Creation Moda %>
-<div class="modal fade" id="new_klass" tabindex="-1" role="dialog" aria-labelledby="newKlass">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Add a new Class</h4>
-      </div>
-      <div class="modal-body">
-        <%= simple_form_for @new_klass, remote: true, html: {id: "new-klass-form"} do |f| %>
-          <%= f.input :name %>
-          <%= f.submit "Add Class", class: "btn btn-danger" %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div>
+<%= render partial: 'klasses/form' %>
+<%#@= render partial: 'sections/form' %>
