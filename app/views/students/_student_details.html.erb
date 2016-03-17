@@ -1,0 +1,14 @@
+<dl class="dl-horizontal">
+  <% [:name, :fathers_name, :email, :gender, :dob, :phone, :address].each do |prop| %>
+    <dt><%= prop.to_s.gsub("_", " ").titlecase %></dt>
+    <dd><i>
+      <% if prop == :gender %>
+        <%= Student::Gender::label(student.gender) %>
+      <% elsif prop == :dob %>
+        <%= student.dob.strftime("%B %-d, %Y") %>
+      <% else %>
+        <%= student.send(prop) %>
+      <% end %>
+    </dd></i>
+  <% end %>
+</dl>
