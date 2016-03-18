@@ -27,10 +27,24 @@
     <div id="students" class="col-md-4 hidden">
       <div class="panel panel-danger">
         <div class="panel-heading">
-          <%= link_to fa_icon("plus-circle"), "#",  class: "pull-right", remote: true %>
+          <%= link_to fa_icon("plus-circle"), "#", id: "student-trigger", class: "pull-right", remote: true %>
+          <span class="pull-right">&nbsp; &nbsp;</span>
+          <%= link_to fa_icon("hand-o-up"), "#", id: "attendance-trigger", class: "pull-right", remote: true %>
           <b>Students</b>
         </div>
         <div id="students-list" class="list-group">
+        </div>
+      </div>
+    </div>
+    <div id="attendance" class="col-md-4 hidden">
+      <div class="panel panel-danger">
+        <div class="panel-heading">
+          <%= link_to "Submit", "#", id: "submit-attendance", class: "pull-right btn btn-small btn-danger", remote: true %>
+          <span class="pull-right btn btn-sm">&nbsp; or &nbsp;</span>
+          <%= link_to "Cancel", "#", id: "cancel-attendance", class: "pull-right btn btn-small btn-danger", remote: true %>
+          <b>Attendance</b>
+        </div>
+        <div id="attendents-list" class="list-group">
         </div>
       </div>
     </div>
@@ -46,7 +60,6 @@
     </div>
   </div>
 </div>
-
 
 <%= render partial: 'klasses/form' %>
 <%#@= render partial: 'sections/form' %>
