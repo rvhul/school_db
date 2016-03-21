@@ -1,6 +1,9 @@
 StudentsDBUtils.hide('#students');
 StudentsDBUtils.show('#attendance');
 StudentsDBUtils.hide('#student');
+
 $('#attendance .panel-heading a#cancel-attendance').attr('href', '<%= klass_section_students_path(@klass, @section) %>');
+
 $('#attendents-list').html('<%= j render(partial: 'attendance_registries/attendents', locals: {students: @students}) %>')
+
 AttendentUtils.init();
