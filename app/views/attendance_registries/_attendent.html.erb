@@ -1,1 +1,0 @@
-<%= link_to(klass_section_student_path(@klass, @section, student), class: "list-group-item student-item", id: dom_id(student), remote: true) do content_tag(:span, class: "pull-right") do fa_icon("check-square-o") + fa_icon("square-o", class: "hidden") end +  content_tag(:b, student.roll_number) + " " + student.name end %>
