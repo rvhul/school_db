@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: absentees
+#
+#  id                     :integer          not null, primary key
+#  student_id             :integer
+#  attendance_registry_id :integer
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#
+require 'messenger_service'
+
 class Absentee < ActiveRecord::Base
   belongs_to :student
   belongs_to :attendance_registry
@@ -7,10 +19,21 @@ class Absentee < ActiveRecord::Base
 
 private
   def send_absent_notification!
-    puts ">>>>>> send sms to #{self.student.phone}"
+    student = self.student
+    msg = ""
+    msg += "Dear #{student.fathers_name}, "
+    msg += "Your child, #{student.name}, was not present today during attendance"
+    msg += "This is to inform you of his/her absence."
+    msg += "Regards, CodeTillYouErode Bootcamp"
+    MessengerService.new.send_sms("(847) 961-4257", self.student.phone, msg)
   end
 
   def send_present_notification!
-    puts ">>>>>send present sms to #{self.student.phone}"
+    student = self.student
+    msg = ""
+    msg += "Dear #{student.fathers_name}, "
+    msg += "Your child, #{student.name}, is present at school now"
+    msg += "Regards, CodeTillYouErode Bootcamp"
+    MessengerService.new.send_sms("(847) 961-4257", self.student.phone, msg)
   end
 end

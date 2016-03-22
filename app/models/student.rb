@@ -8,7 +8,7 @@
 #  roll_number  :integer
 #  name         :string
 #  fathers_name :string
-#  gender       :string
+#  gender       :integer
 #  email        :string
 #  dob          :date
 #  phone        :string
@@ -38,4 +38,5 @@ class Student < ActiveRecord::Base
 
   belongs_to :section
   belongs_to :house
+  has_one :exam
 end

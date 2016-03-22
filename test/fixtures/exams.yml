@@ -1,0 +1,35 @@
+# == Schema Information
+#
+# Table name: exams
+#
+#  id         :integer          not null, primary key
+#  student_id :integer
+#  english    :string
+#  integer    :string
+#  hindi      :integer
+#  math       :integer
+#  science    :integer
+#  social     :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  student_id: 
+  english: MyString
+  integer: MyString
+  hindi: 1
+  math: 1
+  science: 1
+  social: 1
+
+two:
+  student_id: 
+  english: MyString
+  integer: MyString
+  hindi: 1
+  math: 1
+  science: 1
+  social: 1

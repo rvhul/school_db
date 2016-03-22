@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160321120002) do
+ActiveRecord::Schema.define(version: 20160322062812) do
 
   create_table "absentees", force: :cascade do |t|
     t.integer  "student_id"
@@ -31,6 +31,20 @@ ActiveRecord::Schema.define(version: 20160321120002) do
   end
 
   add_index "attendance_registries", ["section_id"], name: "index_attendance_registries_on_section_id"
+
+  create_table "exams", force: :cascade do |t|
+    t.integer  "student_id"
+    t.string   "english"
+    t.string   "integer"
+    t.integer  "hindi"
+    t.integer  "math"
+    t.integer  "science"
+    t.integer  "social"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "exams", ["student_id"], name: "index_exams_on_student_id"
 
   create_table "houses", force: :cascade do |t|
     t.string   "name"

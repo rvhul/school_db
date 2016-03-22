@@ -1,17 +1,22 @@
 # == Schema Information
 #
-# Table name: attendance_registries
+# Table name: exams
 #
 #  id         :integer          not null, primary key
-#  date       :date
-#  section_id :integer
+#  student_id :integer
+#  english    :string
+#  integer    :string
+#  hindi      :integer
+#  math       :integer
+#  science    :integer
+#  social     :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
 require 'test_helper'
 
-class AttendanceRegistryTest < ActiveSupport::TestCase
+class ExamTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
